@@ -39,6 +39,14 @@ app.use("/api/auth", authRoutes);
 app.use("/api", productRoutes);
 app.use("/api/admin", adminRoutes);
 
+
+app.use(cors({
+  origin: "https://productdeleteurl.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  credentials: true // agar cookies/auth headers use kar rahe ho
+}));
+
+
 // =======================
 // HEALTH CHECK
 // =======================
